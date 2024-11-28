@@ -4,11 +4,11 @@ let initialGridSize = 16;
 function createGrid (amount){
     for (i = 0; i < (amount * amount); i++){
         let square = document.createElement("div");
-        let width = Math.floor(100 / amount);
+        let width = 1000 / amount;
         square.className = "square";
         container.appendChild(square);
-        square.style.width = `${width}%`;
-        square.style.height = `${width}%`;
+        square.style.width = width + "px";
+        square.style.height = width + "px";
     }
 }
 createGrid(initialGridSize);
@@ -40,16 +40,20 @@ container.addEventListener("mouseleave", stopColor);
 */
 
 const btnResize = document.querySelector("button");
-
-/*document.querySelectorAll(".square").forEach((delete) => {
-    delete.remove();
-  });*/
+let paraGridSize = document.querySelector("#gridSize");
 
 function promptSize (){
-    container.innerHTML = "";
-    let newSize = prompt("Enter new grid size:", "");
+    let newSize = prompt("Enter new grid size(1-100):", "");
     newSize;
-    createGrid(newSize);
+    if(newSize === null){
+        return;
+    } else if( newSize > 100 || newSize < 1 || isNaN(newSize)){
+        newSize = prompt("Grid size has to be a number between 1 - 100. Try again.");
+    } else {
+        container.innerHTML = "";
+        paraGridSize.innerText = newSize + "x" + newSize;
+        createGrid(+newSize);
+    }
 }
 btnResize.addEventListener("click", promptSize);
 

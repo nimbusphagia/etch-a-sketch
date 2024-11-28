@@ -1,6 +1,8 @@
 /*GRID*/
 body {
     font-family: Helvetica neue;
+    font-size: 40px;
+    background-color: rgb(80, 36, 182);
 }
 #container {
     /*background-color: blue;*/
@@ -8,6 +10,8 @@ body {
     flex-wrap: wrap;
     width:1000px;
     height:1000px;
+    max-width: 1000px;
+    max-height: 1000px;
     gap: 0;
     margin: 0;
     padding: 0;
@@ -24,10 +28,11 @@ body {
     border: 1px solid black;
     min-width:0;
     min-height: 0;
+    flex-shrink: 1;
 }
 /* HOVER */
 .coloredSquare {
-    background-color: pink;
+    background-color: rgb(255, 213, 0);
 }
 /*INPUT*/
 #userInput{
@@ -45,7 +50,7 @@ body {
     gap: 15px;
 }
 button{
-    max-width: fit-content;
-    font-size:14px;
+    font-size:22px;
+    padding: 5px 10px;
 }
 
