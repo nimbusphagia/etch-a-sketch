@@ -1,28 +1,51 @@
 /*GRID*/
 body {
     font-family: Helvetica neue;
-    width:100vw;
 }
 #container {
     /*background-color: blue;*/
     display: flex;
     flex-wrap: wrap;
-    width:60vw;
-    height:60vw;
+    width:1000px;
+    height:1000px;
     gap: 0;
-    margin: auto;
-    border: 1px solid black;
+    margin: 0;
     padding: 0;
-    justify-content: center;
+    justify-self: center;
+    /*border: 1px solid black;*/
 }
 .square {
     /*background-color: red;*/
-    flex-basis: 6.25%;
-    height: 6.25%;
+    /*width: 6%;
+    height: 6%;*/
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: 1px solid black;
+    min-width:0;
+    min-height: 0;
 }
 /* HOVER */
 .coloredSquare {
-    background-color: black;
+    background-color: pink;
 }
+/*INPUT*/
+#userInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+}
+#info {
+    margin:auto auto;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+button{
+    max-width: fit-content;
+    font-size:14px;
+}
+
