@@ -1,3 +1,4 @@
+/*GRID*/
 body {
     font-family: Helvetica neue;
     width:100vw;
@@ -10,11 +11,18 @@ body {
     height:60vw;
     gap: 0;
     margin: auto;
+    border: 1px solid black;
+    padding: 0;
+    justify-content: center;
 }
 .square {
-    border: 1.19px solid black;
     /*background-color: red;*/
-    flex-basis: 6%;
-    height: 6%;
-    margin:0;
+    flex-basis: 6.25%;
+    height: 6.25%;
+    margin: 0;
+    padding: 0;
+}
+/* HOVER */
+.coloredSquare {
+    background-color: black;
 }

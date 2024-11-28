@@ -12,3 +12,21 @@ function createDivs (amount){
 createDivs(16);
 
 //HOVER
+function changeColor (event){
+    let selectedSquare = event.target;
+    if (selectedSquare !== container){
+        selectedSquare.classList.add("coloredSquare");   
+    }
+}
+
+function startColor () {
+    container.addEventListener("mouseover", changeColor);
+};
+function stopColor () {
+    container.removeEventListener("mouseover", changeColor);
+}
+container.addEventListener("mousedown", startColor);
+container.addEventListener("mouseup", stopColor);
+container.addEventListener("mouseleave", stopColor);
+
+
