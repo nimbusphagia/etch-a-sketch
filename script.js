@@ -4,7 +4,7 @@ let initialGridSize = 16;
 function createGrid (amount){
     for (i = 0; i < (amount * amount); i++){
         let square = document.createElement("div");
-        let width = 1000 / amount;
+        let width = 800 / amount;
         square.className = "square";
         container.appendChild(square);
         square.style.width = width + "px";
@@ -32,13 +32,6 @@ container.addEventListener("mouseup", stopColor);
 container.addEventListener("mouseleave", stopColor);
 
 //USER INPUT
-/* 
-1. Button calls prompt to get new grid size value
-2. Delete previous grid to then createGrid() with the new value, change gridSize text
-3. fit the grid with CSS
-
-*/
-
 const btnResize = document.querySelector("button");
 let paraGridSize = document.querySelector("#gridSize");
 
@@ -57,5 +50,34 @@ function promptSize (){
 }
 btnResize.addEventListener("click", promptSize);
 
+//ADD-ONS
+/* 
+_ eraseALL button
+_ color options (small palette)
+_ style interface 
+*/
+//ERASER
+
+function eraseColor (event){
+    let selectedSquare = event.target;
+    if (selectedSquare !== container){
+        selectedSquare.classList.remove("coloredSquare");   
+    }
+}
+
+function startEraser () {
+    if(event.shiftKey){
+        container.addEventListener("mouseover", eraseColor);
+        }
+};
+function stopEraser () {
+    if(event.shiftKey){
+        container.removeEventListener("mouseover", eraseColor);
+        }
+}
+container.addEventListener("mousedown", startEraser);
+container.addEventListener("mouseup", stopEraser);
+container.addEventListener("mouseleave", stopEraser);
+;
 
 
