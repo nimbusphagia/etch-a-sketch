@@ -1,10 +1,11 @@
 /*GRID*/
 body {
-    font-family: Helvetica neue;
+    font-family: Helvetica;
     font-size: 40px;
     color: black;
     background-color: rgb(247, 229, 162);
 }
+
 #padding{
     height:80px;
 }
@@ -68,7 +69,7 @@ button{
     font-size:22px;
     padding: 5px 10px;
     margin:auto;
-    font-family: Helvetica neue;
+    font-family: Helvetica;
     color: black;
     background-color: rgb(247, 229, 162);
     text-align:center;
